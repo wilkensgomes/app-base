@@ -2,8 +2,7 @@
 import React from 'react';
 import { Form, type FormProps, Input, message } from 'antd';
 import { ButtonPrimary } from '@/app/(authenticated)/components/Buttons/ButtonPrimary';
-import { supabase } from '../../../config/supabase/supabase';
-import { useRouter } from 'next/navigation';
+import { singUpSupabase } from '../login/actions';
 type FieldType = {
   email?: string;
   senha?: string;
@@ -11,24 +10,10 @@ type FieldType = {
 };
 
 export default function FormRegistro() {
-  const router = useRouter();
   const onFinish: FormProps<FieldType>['onFinish'] = async values => {
     let email = values.email || '';
     let senha = values.senha || '';
-    const { data, error } = await supabase.auth.signUp({
-      email: email,
-      password: senha,
-    });
-    if (data.user !== null) {
-      console.log(data);
-      router.push('/');
-    }
-    if (error) {
-      console.log(error);
-      message.error(
-        'Erro ao fazer cadastro, verifique os dados ou entre com contato com o administrador.'
-      );
-    }
+    singUpSupabase(email, senha);
   };
 
   const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = errorInfo => {

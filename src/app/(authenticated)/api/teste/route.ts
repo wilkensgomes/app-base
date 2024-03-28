@@ -1,8 +1,8 @@
-import { createClient } from '@/config/supabase/server'
+import { createClientFromServer } from '@/config/supabase/server'
 
 export async function GET() {
 
-    const supabase = createClient()
+    const supabase = createClientFromServer()
 
     const { data, error } = await supabase.from('clientes_teste').select('*')
     console.log(data)

@@ -43,7 +43,7 @@ export default function NavbarLateral() {
       ref={navbarRef}
       id="navbar-lateral"
       className={cn(
-        'fixed top-0 left-0 h-full  mt-16 bg-primary w-46 px-6 text-white transition-transform duration-500 ease-in-out',
+        'fixed top-0 left-0 h-full mt-16 bg-primary w-46 px-6 text-white transition-transform duration-500 ease-in-out',
         collapse ? 'translate-x-0' : '-translate-x-full'
       )}
     >

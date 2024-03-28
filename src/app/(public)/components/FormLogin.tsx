@@ -2,8 +2,6 @@
 import React from 'react';
 import { Form, type FormProps, Input, message } from 'antd';
 import { ButtonPrimary } from '@/app/(authenticated)/components/Buttons/ButtonPrimary';
-import { supabase } from '../../../config/supabase/supabase';
-import { useRouter } from 'next/navigation';
 import { loginSupabase } from '../login/actions';
 type FieldType = {
   email?: string;

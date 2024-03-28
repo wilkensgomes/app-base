@@ -5,11 +5,12 @@ import {
   SettingOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { supabase } from '@/config/supabase/supabase';
+import { createClienteFromBrowser } from '@/config/supabase/supabase';
 import { useStoreContextNavigation } from './StoreContextNavigation';
 import { useRouter } from 'next/navigation';
 import { Avatar, message, Popover } from 'antd';
 export default function NavbarTop() {
+  const supabase = createClienteFromBrowser();
   const { collapse, setCollapse } = useStoreContextNavigation();
   const [openMenu, setOpenMenu] = useState(false);
   const router = useRouter();

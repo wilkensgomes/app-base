@@ -7,13 +7,18 @@
 - TailwindCSS
 - Antd
 
-### Estrutura
+#### Estrutura
 
 - Login
 - Registro
 - Layout
 - Api
 
-### Config
+#### Config
 
 - Middleware para acessar o supabase via server e proteger rotas
+
+#### Setup
+
+- Primeiro adicione as variáveis de ambiente
+- Na parte config tem separado o createBrowserClient e createServerClient
